@@ -1,0 +1,142 @@
+body {
+  background: #fff;
+  font-family: Arial, sans-serif;
+}
+#main-container {
+  max-width: 900px;
+  margin: 30px auto;
+  text-align: center;
+}
+#add-timers {
+  margin-bottom: 40px;
+}
+#add-timers button {
+  font-size: 1.1em;
+  margin: 0 10px 10px 10px;
+  padding: 10px 24px;
+  background: #ddd;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.timer-container {
+  margin: 35px auto 40px auto;
+  padding: 18px 0 36px 0;
+  border-radius: 34px;
+  width: 92%;
+  background: #eceefe;
+  box-shadow: 2px 6px 18px #aaa;
+  max-width: 730px;
+  position: relative;
+}
+.timer-display {
+  background: #e9edff;
+  border: 7px solid #222;
+  border-radius: 30px;
+  width: 95%;
+  margin: 0 auto 15px auto;
+  position: relative;
+  padding: 16px 0 7px 0;
+  box-sizing: border-box;
+}
+.time-big {
+  font-size: 6em;
+  letter-spacing: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  display: inline-block;
+}
+.time-millis {
+  position: absolute;
+  right: 50px;
+  bottom: 10px;
+  font-size: 2em;
+  color: #222;
+  font-family: 'Courier New', Courier, monospace;
+}
+.timer-buttons {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+.timer-btn {
+  font-size: 2.3em;
+  border-radius: 22px;
+  border: 5px solid #444;
+  width: 310px;
+  height: 120px;
+  margin: 0 15px;
+  cursor: pointer;
+  transition: 0.15s;
+  font-family: Arial Black, Arial, sans-serif;
+}
+.btn-start, .btn-set {
+  background: #18f30a;
+  color: #111;
+}
+.btn-pause {
+  background: #1be922;
+  color: #111;
+}
+.btn-continue {
+  background: #2c77e6;
+  color: #fff;
+}
+.btn-clear {
+  background: #ef1717;
+  color: #fff;
+}
+.countdown-keypad {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px 12px;
+  margin-top: 24px;
+  margin-bottom: 10px;
+}
+.keypad-btn {
+  width: 90px;
+  height: 60px;
+  background: #18f30a;
+  color: #111;
+  border-radius: 10px;
+  font-size: 2em;
+  border: 3px solid #1a1a1a;
+  cursor: pointer;
+  margin-bottom: 7px;
+}
+.keypad-btn.btn-set {
+  background: #2c77e6;
+  color: #fff;
+  border: 3px solid #2c77e6;
+}
+.keypad-btn.btn-clear {
+  background: #ccc;
+  color: #333;
+  border: 3px solid #aaa;
+}
+.notification {
+  position: fixed;
+  bottom: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff9aa;
+  padding: 28px 68px;
+  border-radius: 22px;
+  font-size: 2em;
+  font-weight: bold;
+  box-shadow: 2px 6px 22px #aaa;
+  z-index: 1000;
+}
+@media (max-width: 600px) {
+  .timer-btn, .timer-buttons {
+    width: 98vw;
+    min-width: 0;
+    font-size: 1.4em;
+    padding: 7px 2px;
+    height: auto;
+  }
+  .countdown-keypad {
+    gap: 10px 5px;
+  }
+}
