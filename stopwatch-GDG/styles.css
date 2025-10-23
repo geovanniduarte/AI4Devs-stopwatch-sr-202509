@@ -1,142 +1,202 @@
+/* styles.css */
 body {
-  background: #fff;
-  font-family: Arial, sans-serif;
+    background: #f6f7fb;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
 }
-#main-container {
-  max-width: 900px;
-  margin: 30px auto;
-  text-align: center;
+.app-header {
+    text-align: center;
+    margin-top: 24px;
 }
-#add-timers {
-  margin-bottom: 40px;
+h1 {
+    margin-bottom: 18px;
+    color: #23243a;
+    font-size: 2.2rem;
 }
-#add-timers button {
-  font-size: 1.1em;
-  margin: 0 10px 10px 10px;
-  padding: 10px 24px;
-  background: #ddd;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
+.add-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 28px;
 }
-.timer-container {
-  margin: 35px auto 40px auto;
-  padding: 18px 0 36px 0;
-  border-radius: 34px;
-  width: 92%;
-  background: #eceefe;
-  box-shadow: 2px 6px 18px #aaa;
-  max-width: 730px;
-  position: relative;
+.main-add-btn {
+    background: #e5eafc;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.10rem;
+    padding: 13px 28px;
+    color: #23243a;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .18s;
 }
-.timer-display {
-  background: #e9edff;
-  border: 7px solid #222;
-  border-radius: 30px;
-  width: 95%;
-  margin: 0 auto 15px auto;
-  position: relative;
-  padding: 16px 0 7px 0;
-  box-sizing: border-box;
+.main-add-btn:hover {
+    background: #cbe3f2;
 }
-.time-big {
-  font-size: 6em;
-  letter-spacing: 10px;
-  font-family: 'Courier New', Courier, monospace;
-  display: inline-block;
+.timers-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    margin-bottom: 42px;
 }
-.time-millis {
-  position: absolute;
-  right: 50px;
-  bottom: 10px;
-  font-size: 2em;
-  color: #222;
-  font-family: 'Courier New', Courier, monospace;
+.timer-box {
+    background: #dee5fa;
+    border: 6px solid #23243a;
+    border-radius: 32px;
+    min-width: 415px;
+    max-width: 570px;
+    box-shadow: 0 2px 22px #dee6fa;
+    margin: 0 auto;
+    padding: 35px 35px 34px 35px;
+    position: relative;
 }
-.timer-buttons {
-  margin-top: 35px;
-  display: flex;
-  justify-content: center;
-  gap: 100px;
+@media (max-width: 620px) {
+    .timer-box {
+        min-width: 96vw;
+        padding: 22px 5vw 24px 5vw;
+    }
+}
+.display-area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+.time-numbers-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+.time-main {
+    font-size: 6.2rem;
+    font-weight: bold;
+    color: #181a30;
+    line-height: 1;
+    letter-spacing: 3px;
+    flex-grow: 1;
+}
+.time-ms {
+    font-size: 2.1rem;
+    color: #25284a;
+    font-weight: bold;
+    margin-left: 16px;
+    margin-bottom: 10px;
+    align-self: flex-end;
+}
+.timer-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 14px;
 }
 .timer-btn {
-  font-size: 2.3em;
-  border-radius: 22px;
-  border: 5px solid #444;
-  width: 310px;
-  height: 120px;
-  margin: 0 15px;
-  cursor: pointer;
-  transition: 0.15s;
-  font-family: Arial Black, Arial, sans-serif;
+    min-width: 175px;
+    min-height: 78px;
+    border-radius: 17px;
+    font-size: 2.1rem;
+    font-weight: bold;
+    border: 4.5px solid #25284a;
+    cursor: pointer;
+    outline: none;
+    background: #10f431;
+    color: #163a16;
+    transition: background .13s, color .11s;
 }
-.btn-start, .btn-set {
-  background: #18f30a;
-  color: #111;
+.timer-btn.pause {
+    background: #ffe637;
+    color: #25284a;
 }
-.btn-pause {
-  background: #1be922;
-  color: #111;
+.timer-btn.continue {
+    background: #1080ea;
+    color: #fff;
 }
-.btn-continue {
-  background: #2c77e6;
-  color: #fff;
+.timer-btn.clear {
+    background: #ea1818;
+    color: #fff;
 }
-.btn-clear {
-  background: #ef1717;
-  color: #fff;
+.timer-btn:active {
+    filter: brightness(0.91);
 }
-.countdown-keypad {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px 12px;
-  margin-top: 24px;
-  margin-bottom: 10px;
+@media (max-width: 700px) {
+    .timer-btn {
+        min-width: 43vw;
+        font-size: 1.18rem;
+        min-height: 53px;
+    }
 }
-.keypad-btn {
-  width: 90px;
-  height: 60px;
-  background: #18f30a;
-  color: #111;
-  border-radius: 10px;
-  font-size: 2em;
-  border: 3px solid #1a1a1a;
-  cursor: pointer;
-  margin-bottom: 7px;
+
+/* Countdown numpad & setup */
+.numpad-row {
+    display: flex;
+    gap: 13px;
+    justify-content: center;
+    margin-bottom: 8px;
+    margin-top: 2px;
 }
-.keypad-btn.btn-set {
-  background: #2c77e6;
-  color: #fff;
-  border: 3px solid #2c77e6;
+.numpad-btn {
+    min-width: 68px;
+    min-height: 48px;
+    font-size: 1.5rem;
+    border-radius: 9px;
+    border: 3px solid #25284a;
+    background: #10f431;
+    color: #163a16;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background .14s;
 }
-.keypad-btn.btn-clear {
-  background: #ccc;
-  color: #333;
-  border: 3px solid #aaa;
+.numpad-btn:active, .set-btn:active {
+    filter: brightness(.90);
 }
-.notification {
-  position: fixed;
-  bottom: 45px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #fff9aa;
-  padding: 28px 68px;
-  border-radius: 22px;
-  font-size: 2em;
-  font-weight: bold;
-  box-shadow: 2px 6px 22px #aaa;
-  z-index: 1000;
+.set-btn,
+.numpad-clear-btn {
+    min-width: 87px;
+    min-height: 48px;
+    font-size: 1.12rem;
+    border-radius: 9px;
+    border: 3px solid #25284a;
+    background: #ea1818;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background .15s;
 }
-@media (max-width: 600px) {
-  .timer-btn, .timer-buttons {
-    width: 98vw;
-    min-width: 0;
-    font-size: 1.4em;
-    padding: 7px 2px;
-    height: auto;
-  }
-  .countdown-keypad {
-    gap: 10px 5px;
-  }
+.set-btn {
+    background: #10f431;
+    color: #163a16;
+}
+.numpad-clear-btn {
+    background: #ea1818;
+}
+.notif {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 28px;
+    background: #fffbe2;
+    color: #ba8605;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border: 2.2px solid #f3c856;
+    border-radius: 5px;
+    padding: 6px 18px;
+    z-index: 5;
+    box-shadow: 0 3px 32px #eee8;
+}
+
+/* Responsive for extra small screens */
+@media (max-width: 480px) {
+    .timer-btn, .numpad-btn, .set-btn, .numpad-clear-btn {
+        min-width: 95vw;
+        font-size: 1rem;
+        min-height: 44px;
+    }
+    .time-main {
+        font-size: 2.8rem;
+    }
 }

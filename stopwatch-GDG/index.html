@@ -1,20 +1,22 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Cronómetro & Cuenta Regresiva</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <title>Temporizadores Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="main-container">
-    <h1>Elige tipo de temporizador</h1>
-    <div id="add-timers">
-      <button id="add-stopwatch">Agregar Cronómetro</button>
-      <button id="add-countdown">Agregar Cuenta Regresiva</button>
-    </div>
-    <div id="timers-list"></div>
-  </div>
-  <audio id="alert-sound" src="https://cdn.pixabay.com/audio/2022/07/26/audio_124bfa97c9.mp3" preload="auto"></audio>
-  <script src="script.js"></script>
+    <section class="app-header">
+        <h1>Temporizadores Web</h1>
+        <div class="add-buttons">
+            <button id="addStopwatch" class="main-add-btn">+ Cronómetro</button>
+            <button id="addCountdown" class="main-add-btn">+ Cuenta regresiva</button>
+        </div>
+    </section>
+    <div id="timers" class="timers-container"></div>
+    <script src="script.js"></script>
 </body>
 </html>
+
